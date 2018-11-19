@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <div>  
+      <form method="post" name="anime" action="/anime/detail"></form>
+        <table>
+        
+          <% for(var i in content) { %>
+            <tr>
+              <% var obj = content[i]; %>
+              <td>
+                  <input type="hidden" name="id" value = <%= obj.ANIME_ID %>>
+                  <a href="javascript:anime.submit()"><%= obj.TITLE %></a>
+              </td>
+            </tr>
+          <% } %>
+        </table>
+      </form>
+    </div>
+  </body>
+</html>
+
+   <!-- <table>
+        <% for(var i in content) { %>
+          <tr>
+            <% var obj = content[i]; %>
+            <td><a href="/anime/detail"><%= obj.TITLE %></a></td>
+          </tr>
+        <% } %> -->

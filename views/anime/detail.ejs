@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <table>
+        <% for(var i in content) { %>
+          <tr>
+            <% var obj = content[i]; %>
+            <td><%= obj.TITLE %></td>
+            <td><%= obj.STORY %></td>
+            <td><a href=<%= obj.URL %>>公式サイト</a></td>
+          </tr>
+        <% } %>
+  </body>
+</html>

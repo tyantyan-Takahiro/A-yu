@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title><%= title %></title>
+    <link rel='stylesheet' href="/stylesheets/style.css">
+  </head>
+
+  <body>
+<!-- ヘッダー開始 -->
+    <h1><%= title %></h1>
+    <form method="post" action="/search">
+      <input type="text" name="text" value="調べたい文字列">
+      <input type="radio" name="id" value="アニメ">アニメ
+      <input type="radio" name="id" value="声優">声優
+      <input type="submit" value="検索">
+    </form>
+<!-- ヘッダー終了 -->
+<!-- アニメコンテナ開始 -->
+    <p><a href="/anime">アニメに移動</a></p>
+<!-- アニメコンテナ終了 -->
+<!-- 声優コンテナ開始 -->
+    <p><a href="/seiyu">声優に移動</a></p>
+<!-- 声優コンテナ終了 -->
+<!-- 今期クールコンテナ開始 -->
+    <p><a href="/season">過去のクール</a></p>
+
+<!-- 今期クールコンテナ終了 -->
+<!-- フッター開始 -->
+
+<!-- フッター終了 -->
+  </body>
+</html>
