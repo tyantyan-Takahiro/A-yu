@@ -6,21 +6,20 @@
   </head>
   <body>
     <h1><%= title %></h1>
-    <div>  
-      <form method="post" name="anime" action="/anime/detail"></form>
+    <div> 
         <table>
-        
           <% for(var i in content) { %>
             <tr>
-              <% var obj = content[i]; %>
+                <% var obj = content[i]; %>        
               <td>
-                  <input type="hidden" name="id" value = <%= obj.ANIME_ID %>>
-                  <a href="javascript:anime.submit()"><%= obj.TITLE %></a>
+                  <form method="post" name= '<%= obj.TITLE %>' action="/anime/detail">   
+                  <input type="hidden" name= "id" value= '<%= obj.ANIME_ID %>' >
+                  <a href="javascript:<%= obj.TITLE %>.submit()"><%= obj.TITLE %></a>
+                </form>
               </td>
             </tr>
           <% } %>
         </table>
-      </form>
     </div>
   </body>
 </html>
