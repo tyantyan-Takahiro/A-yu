@@ -5,18 +5,21 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-<!-- ヘッダー開始 -->
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-<!-- ヘッダー終了 -->
-<!-- アニメコンテナ開始 -->
-
-<!-- アニメコンテナ終了 -->
-<!-- 声優コンテナ開始 -->
-
-<!-- 声優コンテナ終了 -->
-    <!-- 今期クールコンテナ開始 -->
-
-    <!-- 今期クールコンテナ終了 -->
+    <div> 
+        <table>
+          <% for(var i in content) { %>
+            <tr>
+                <% var obj = content[i]; %>        
+              <td>
+                  <form method="post" name= '<%= obj.SEIYU_NAME %>' action="/seiyu/detail">   
+                  <input type="hidden" name= "id" value= '<%= obj.SEIYU_ID %>' >
+                  <a href="javascript:<%= obj.SEIYU_NAME %>.submit()"><%= obj.SEIYU_NAME %></a>
+                </form>
+              </td>
+            </tr>
+          <% } %>
+        </table>
+    </div>
   </body>
 </html>

@@ -48,7 +48,9 @@ router.get('/detail',(req, res, next) => {
 //POST処理
 router.post('/detail',(req, res, next) => {
   console.log("アニメ詳細ページPOST");
-  var id = req.body;//ANIMNE_ID
+  var id = parseInt(req.body.id,10);//ANIMNE_ID
+  
+  console.log(typeof id );　
   console.log(id);
   
   //コネクションの用意
